@@ -1,3 +1,4 @@
+{% extends 'partials/base.html' %}
 {% block content %}
 
 {% for post in posts %}
@@ -5,8 +6,8 @@
   <img src="https://picsum.photos/286/180" class="card-img-top" alt="lorem picsum">
   <div class="card-body">
     <h5 class="card-title">{{ post.title }}</h5>
-    <p class="card-text">{{ post.content }}</p>
-    <a href="" class="btn btn-primary">more...</a>
+    <p class="card-text">{{ post.summary }}</p>
+    <a href={% url 'post' id=post.id %} class="btn btn-primary">more...</a>
   </div>
 </div>
 {% endfor %}
